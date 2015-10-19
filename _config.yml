@@ -1,0 +1,11 @@
+# Site settings
+title: CNP Dev Team Docs
+email: accounts@clarknikdelpowell.com
+description: 'This site is the location for the Clark/Nikdel/Powell Dev Team documentation and best practices.'
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://docs.cnp.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+exclude:
+  - "bower.json"

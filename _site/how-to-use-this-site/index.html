@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>How To Use This Site</title>
+  <meta name="description" content="This site is the location for the Clark/Nikdel/Powell Dev Team documentation and best practices.">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://docs.cnp.io/how-to-use-this-site/">
+  <link rel="alternate" type="application/rss+xml" title="CNP Dev Team Docs" href="http://docs.cnp.io/feed.xml" />
+</head>
+
+
+  <body class="">
+
+    <header class="masthead contain-to-grid">
+
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h2><a href="/">CNP Dev Team Docs</a></h2>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+
+      <!-- Left Nav Section -->
+      <ul class="left">
+        
+          
+          <li><a class="page-link" href="/style-guides/css/">CSS Style Guide</a></li>
+          
+        
+          
+        
+          
+          <li><a class="page-link" href="/how-to-use-this-site/">How To Use This Site</a></li>
+          
+        
+          
+        
+          
+        
+      </ul>
+    </section>
+  </nav>
+
+</header>
+
+
+
+
+    <div class="post">
+
+  <header class="post-header">
+  	<div class="row">
+  		<h1 class="post-title">How To Use This Site</h1>
+  	</div>
+  </header>
+
+  <article class="post-content row">
+    <p>This site is written in Jekyll, which uses a combination of Markdown and static HTML files to display content. Start by assuming your page will be Markdown, unless you need to add a significant amount of custom markup for the specific page you’re working on.</p>
+
+<h3 id="page-setup">Page Setup</h3>
+
+<p>Every page needs a configuration block:</p>
+
+<pre><code>---
+layout: page
+title: How To Use This Site
+permalink: /how-to-use-this-site/
+---
+</code></pre>
+
+<p>Be sure to <strong>end the permalink with a slash</strong>; otherwise, Jekyll will try to download the file instead of display it.</p>
+
+  </article>
+
+</div>
+
+
+    
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/foundation/js/foundation.min.js"></script>
+    <script type="text/javascript">$(document).foundation();</script>
+    <script src="/bower_components/foundation/js/foundation/foundation.magellan.js"></script>
+
+  </body>
+
+</html>

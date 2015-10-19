@@ -1,0 +1,12 @@
+{
+  "name": "Foundation Jekyll Site",
+  "authors": [
+    "Josh Nederveld <joshnederveld@gmail.com>"
+  ],
+  "description": "Jekyll site that is set up with Bower & Foundation",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "clark-nikdel-powell.github.io",
+  "private": true
+}

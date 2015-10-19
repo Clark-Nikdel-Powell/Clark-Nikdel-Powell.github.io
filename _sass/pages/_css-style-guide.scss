@@ -1,0 +1,29 @@
+.css-style-guide {
+
+	.post-content {
+		padding-top: 0;
+	}
+	[data-magellan-expedition] {
+		position: relative;
+		left: auto;
+
+		&:before {
+			width: 200vw;
+			height: 100%;
+			content: '';
+			position: absolute;
+			left: -100vw;
+			top: 0;
+			background-color: $magellan-bg;
+		}
+
+		.sub-nav {
+			position: relative;
+		}
+
+		+ .alert-box {
+			margin-top: 2em;
+		}
+	}
+
+}

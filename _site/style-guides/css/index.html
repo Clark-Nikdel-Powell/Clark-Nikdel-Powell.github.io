@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>CSS Style Guide</title>
+  <meta name="description" content="This site is the location for the Clark/Nikdel/Powell Dev Team documentation and best practices.">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://docs.cnp.io/style-guides/css/">
+  <link rel="alternate" type="application/rss+xml" title="CNP Dev Team Docs" href="http://docs.cnp.io/feed.xml" />
+</head>
+
+
+  <body class="css-style-guide">
+
+    <header class="masthead contain-to-grid">
+
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h2><a href="/">CNP Dev Team Docs</a></h2>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+
+      <!-- Left Nav Section -->
+      <ul class="left">
+        
+          
+          <li><a class="page-link" href="/style-guides/css/">CSS Style Guide</a></li>
+          
+        
+          
+        
+          
+          <li><a class="page-link" href="/how-to-use-this-site/">How To Use This Site</a></li>
+          
+        
+          
+        
+          
+        
+      </ul>
+    </section>
+  </nav>
+
+</header>
+
+
+
+
+    <div class="post">
+
+  <header class="post-header">
+  	<div class="row">
+  		<h1 class="post-title">CSS Style Guide</h1>
+  	</div>
+  </header>
+
+  <article class="post-content row">
+    <div data-magellan-expedition="fixed">
+    <dl class="sub-nav">
+        <dd data-magellan-arrival="properties"><a href="#properties">Properties</a></dd>
+        <dd data-magellan-arrival="media-queries"><a href="#media-queries">Media Queries</a></dd>
+        <dd data-magellan-arrival="nesting-elements"><a href="#nesting-elements">Nesting Elements</a></dd>
+        <dd data-magellan-arrival="file-names"><a href="#file-names">File Names</a></dd>
+        <dd data-magellan-arrival="variables"><a href="#variables">Variables</a></dd>
+        <dd data-magellan-arrival="documentation"><a href="#documentation">Documentation</a></dd>
+    </dl>
+</div>
+
+<p class="alert-box warning"><strong>DO NOT FEAR REFACTORING</strong>. If you think of a way to write your CSS (or any code, really) in a more simple, elegant way, do it. It’ll be worth the yak-shaving.</p>
+
+<a data-magellan-destination="properties" name="properties"></a>
+
+<div class="properties">
+
+	<h3>1. CSS Attribute Order</h3>
+
+	<div class="row">
+
+		<div class="example small-4 columns">
+			<script src="https://gist.github.com/jhned/c1aa6d53e7510a4b8147.js"></script>
+		</div><!-- example -->
+
+		<div class="small-8 medium-4 columns end">
+		    <p>When writing properties, use this order. It starts with the box model and other important properties, and then everything else can be written alphabetically.</p>
+
+		    <p>If an element has a lot of complex transitions / animations going along with it, break that out separate, just so it's easier to see what's going on. Same thing for different color blocks. It's better for organization, so just use your best judgement.</p>
+	    </div><!-- text -->
+
+	</div><!-- row -->
+
+    <h4>1.1 Put @ at the top</h4>
+
+    <p>For better organization, put <code>@include</code> and <code>@extend</code> before other style declarations. It also makes it easier to override the included or extended styles this way.</p>
+
+	<div class="example">
+		<h6>At-Rule Placement</h6>
+		<script src="https://gist.github.com/jhned/7e2dfe1c2dbbe3284d88.js"></script>
+	</div><!-- example -->
+
+</div><!-- properties -->
+
+<a data-magellan-destination="media-queries" name="media-queries"></a>
+<h3>2. Media Queries</h3>
+
+<div class="media-queries">
+
+    <p>When writing media queries, leave a comment for where exactly the media query applies, just so it's clear. Indent code inside the block, and leave a space on top and on bottom.</p>
+
+	<div class="example">
+		<h6>Media Query Formatting</h6>
+		<script src="https://gist.github.com/jhned/0e96b289b2d90e875a82.js"></script>
+	</div>
+
+    <p>Try to keep media query blocks to the standard breakpoints, and group them under medium-sized parent elements: for example, <code>body.page</code> is probably too broad, whereas <code>.btn.yellow</code> is too narrow. Aim for “just right,” also known as the Goldilocks Principle.</p>
+
+    <p>You should begin with the smallest breakpoint and work your way up. The current default breakpoints in Foundation are:</p>
+
+	<div class="example">
+		<h6>Foundation Breakpoints</h6>
+		<script src="https://gist.github.com/jhned/840c7b02a907a02a57a3.js"></script>
+	</div>
+
+</div>
+
+<a data-magellan-destination="nesting-elements" name="nesting-elements"></a>
+<h3>3. Nesting Elements</h3>
+
+<div class="nesting-elements">
+
+    <p>When nesting elements, begin with <strong>pseudo elements</strong>, then <strong>compound CSS classes</strong>, then <strong>nested elements</strong> inside the parent.</p>
+
+	<div class="example">
+		<h6>Element Nesting</h6>
+    	<script src="https://gist.github.com/jhned/3ec846ef28402cd404e3.js"></script>
+    </div>
+
+    <h4>3.1 Elements Order Explained</h4>
+
+    <ol>
+        <li>Scenario pseudo-classes (:first-child, :last-child, etc)</li>
+        <li>Relational pseudo-classes (:before and :after)</li>
+        <li>Children (if they need to be nested).</li>
+        <li>State pseudo-classes (:hover, :active, etc) </li>
+    </ol>
+
+    <p>Because you may change something about the <code>:first-child</code>, <code>:before</code>, or child elements on hover, and it's easier to see what the change is if the original CSS is above.</p>
+
+    <h4>Nest only if you need to</h4>
+
+    <p class="alert-box warning">Group child elements together, either nested or unnested.</p>
+
+    <p>To determine whether a child element needs to be nested, consider:</p>
+
+	<ol>
+	    <li>If the class is unique enough (nav.main, .logo, etc.) to stand on its own, don’t nest it.</li>
+	    <li>If the class is too generic (.image, .text, .left, .right), or is likely to be reused (.title), then nest it.</li>
+	</ol>
+
+	<p>If you’re unsure what to do, start off by not nesting the element. If you run into problems with it, then consider whether you need to nest it, or whether you can solve it another way.</p>
+
+	<div class="example">
+		<h6>HTML/SCSS</h6>
+		<script src="https://gist.github.com/jhned/f7d1f895a8107586fafe.js"></script>
+	</div>
+
+	<p class="alert-box info">The .generic-child-element here is styled outside of the .parent styles. Even though it <em>needs</em> the specificity, it's better to group .generic-child-element with the other child elements.</p>
+
+
+	<h4>CSS nesting doesn't have to match HTML nesting</h4>
+
+	<p class="alert-box warning">Also remember: CSS nesting <strong>does not have to match</strong> HTML nesting. For example:</p>
+
+	<h6>HTML</h6>
+	<script src="https://gist.github.com/jhned/c102f7e7c8ea42d7e5cc.js"></script>
+
+	<p>the proper way to nest the CSS in this case would be:</p>
+
+	<h6>SCSS</h6>
+	<script src="https://gist.github.com/jhned/034a471a1bef55c9a80b.js"></script>
+
+
+	<h4>Write in order of the DOM tree</h4>
+
+	<p>Finally, write in order of the DOM tree: that is, write the CSS in the same order as the HTML. This will keep things better organized and keep your code more maintainable.</p>
+
+</div>
+
+<a data-magellan-destination="file-names" name="file-names"></a>
+<h3>4. File Names</h3>
+
+<div class="file-names">
+
+    <ol>
+        <li>All partial SCSS files begin with an underscore, e.g., _header.scss, so that they won't be accidentally compiled in Codekit.</li>
+        <li>Generally, mirror the CSS file after the theme file: header.php and _header.scss</li>
+        <li>Use one SCSS file per post type: archive-practice-area.php and content-practice-area.php would both be styled in _practice-areas.scss</li>
+        <li>Use _atoms.scss for small, reusable modules.</li>
+    </ol>
+
+</div>
+
+<a data-magellan-destination="variables" name="variables"></a>
+<h3 >5. SASS Variables</h3>
+
+<div class="variables">
+
+    <p>Variables make our code more efficient, but please name and document them properly. If a variable could apply anywhere in the site, stick it in <strong>settings.scss</strong>. Otherwise, limit its scope to the beginning of the module that it pertains to.</p>
+</div>
+
+<a data-magellan-destination="documentation" name="documentation"></a>
+<h3>6. Document Everything</h3>
+
+<div class="documentation">
+    <p>Ninja code, while impressive, is not maintainable. When you write ninja code, you make other developers first decipher your code before they can modify your code.</p>
+
+    <p>So if you’re doing some crazy thing with lists and loops and what all else, that block better be plastered with comments.</p>
+</div>
+  </article>
+
+</div>
+
+
+    
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/foundation/js/foundation.min.js"></script>
+    <script type="text/javascript">$(document).foundation();</script>
+    <script src="/bower_components/foundation/js/foundation/foundation.magellan.js"></script>
+
+  </body>
+
+</html>
