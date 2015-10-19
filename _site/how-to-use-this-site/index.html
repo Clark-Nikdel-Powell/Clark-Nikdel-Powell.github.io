@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>How To Use This Site</title>
+  <title>How To Use This Site | CNP Dev Team Docs</title>
   <meta name="description" content="This site is the location for the Clark/Nikdel/Powell Dev Team documentation and best practices.">
 
   <link rel="stylesheet" href="/css/main.css">
@@ -15,7 +15,7 @@
 </head>
 
 
-  <body class="">
+  <body class="how-to-use-this-site">
 
     <header class="masthead contain-to-grid">
 
@@ -65,20 +65,28 @@
   </header>
 
   <article class="post-content row">
-    <p>This site is written in Jekyll, which uses a combination of Markdown and static HTML files to display content. Start by assuming your page will be Markdown, unless you need to add a significant amount of custom markup for the specific page you’re working on.</p>
+    <p class="alert-box info">This site is written in Jekyll, which uses a combination of Markdown and static HTML files to display content. Start by assuming your page will be Markdown, unless you need to add a significant amount of custom markup for the specific page you’re working on.</p>
 
-<h3 id="page-setup">Page Setup</h3>
+<h3 id="page-setup">1. Page Setup</h3>
 
 <p>Every page needs a configuration block:</p>
 
 <pre><code>---
 layout: page
 title: How To Use This Site
+slug: how-to-use-this-site
 permalink: /how-to-use-this-site/
 ---
 </code></pre>
 
-<p>Be sure to <strong>end the permalink with a slash</strong>; otherwise, Jekyll will try to download the file instead of display it.</p>
+<h4 id="notes">Notes</h4>
+
+<ol>
+  <li><strong>Layout:</strong> the current layouts are “default” and “page”</li>
+  <li><strong>Title:</strong> the page title, used in the head and in the <code>.post-header</code></li>
+  <li><strong>Slug:</strong> slug for the <code>body</code> class.</li>
+  <li><strong>Permalink:</strong> be sure to end it with a slash, or else Jekyll will try to download the file instead of display it.</li>
+</ol>
 
   </article>
 
