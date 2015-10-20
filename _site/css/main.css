@@ -6978,6 +6978,13 @@ footer {
 h1, h2, h3, h4 {
   margin-bottom: 1rem; }
 
+h3:before, h4:before {
+  margin-right: .5em;
+  content: "//";
+  color: #444444;
+  font-family: "Fira Mono", "Liberation Mono", Courier, monospace;
+  letter-spacing: -7px; }
+
 h3 {
   margin-top: 1em;
   padding: .125em 0;
