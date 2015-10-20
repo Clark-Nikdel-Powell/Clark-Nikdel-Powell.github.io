@@ -17,39 +17,57 @@
 
   <body class="home">
 
-    <header class="masthead contain-to-grid">
+    <header class="masthead contain-to-grid sticky">
 
-  <nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-      <li class="name">
-        <h2><a href="/">CNP Dev Team Docs</a></h2>
-      </li>
-       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-    </ul>
+	<nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+		<ul class="title-area">
+			<li class="name">
+				<h2><a href="/">CNP Dev Team Docs</a></h2>
+			</li>
+			<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+			<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+		</ul>
 
-    <section class="top-bar-section">
+		<section class="top-bar-section">
 
-      <!-- Left Nav Section -->
-      <ul class="left">
-        
-          
-          <li><a class="page-link" href="/style-guides/css/">CSS Style Guide</a></li>
-          
-        
-          
-        
-          
-          <li><a class="page-link" href="/how-to-use-this-site/">How To Use This Site</a></li>
-          
-        
-          
-        
-          
-        
-      </ul>
-    </section>
-  </nav>
+			<!-- Left Nav Section -->
+			<ul class="left">
+				<li class="has-dropdown">
+					<a href="#">Docs</a>
+					<ul class="dropdown">
+						<li><a href="/docs/client-core">Client Core</a></li>
+						<li><a href="/docs/tzolkin">Tzolkin</a></li>
+						<li><a href="/docs/lepidoptera">Lepidoptera</a></li>
+					</ul>
+				</li>
+				<li class="has-dropdown">
+					<a href="#">Tips</a>
+					<ul class="dropdown">
+						<li><a href="/tips/wordpress">WordPress Tips</a></li>
+						<li><a href="/tips/foundation">Foundation Tips</a></li>
+						<li><a href="/tips/sublime">Sublime Tips</a></li>
+						<li><a href="/tips/javascript">JavaScript Tips</a></li>
+					</ul>
+				</li>
+				<li class="has-dropdown">
+					<a href="#">Style Guides</a>
+					<ul class="dropdown">
+						<li><a href="/style-guides/css">CSS</a></li>
+					</ul>
+				</li>
+				<li class="has-dropdown">
+					<a href="#">Development Guides</a>
+					<ul class="dropdown">
+						<li><a href="/development-guides/website-building-process/">Website Building Process</a></li>
+						<li><a href="/development-guides/making-a-development-plan/">Development Plan</a></li>
+					</ul>
+				</li>
+				<li><a href="/how-to-use-this-site/">How to Use this Site</a></li>
+			</ul>
+
+		</section>
+
+	</nav>
 
 </header>
 
@@ -59,10 +77,26 @@
     <div class="post">
 
   <header class="post-header">
-  	<div class="row">
-  		<h1 class="post-title">Intro</h1>
-  	</div>
+    <div class="row">
+        <h1 class="post-title">Intro</h1>
+        
+    </div>
   </header>
+
+  
+
+    
+
+        
+
+      
+
+    <div class="page-status alert-box alert">
+      <div class="row">
+        DRAFT, last edited on 10/20/15 by JHN. Revisions: 1
+      </div>
+    </div>
+  
 
   <article class="post-content row">
     <h2>Core Values</h2>
@@ -73,7 +107,11 @@
 </div>
 
 
-    
+    <footer>
+	<div class="row">
+		&copy; 2015 Clark/Nikdel/Powell
+	</div>
+</footer>
 
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/foundation/js/foundation.min.js"></script>

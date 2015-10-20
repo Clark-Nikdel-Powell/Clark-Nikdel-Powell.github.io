@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>How To Use This Site | CNP Dev Team Docs</title>
+  <title>Foundation Tips | CNP Dev Team Docs</title>
   <meta name="description" content="This site is the location for the Clark/Nikdel/Powell Dev Team documentation and best practices.">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://docs.cnp.io/how-to-use-this-site/">
+  <link rel="canonical" href="http://docs.cnp.io/tips/foundation/">
   <link rel="alternate" type="application/rss+xml" title="CNP Dev Team Docs" href="http://docs.cnp.io/feed.xml" />
 </head>
 
 
-  <body class="how-to-use-this-site">
+  <body class="foundation-tips">
 
     <header class="masthead contain-to-grid sticky">
 
@@ -78,7 +78,7 @@
 
   <header class="post-header">
     <div class="row">
-        <h1 class="post-title">How To Use This Site</h1>
+        <h1 class="post-title">Foundation Tips</h1>
         
     </div>
   </header>
@@ -99,55 +99,11 @@
   
 
   <article class="post-content row">
-    <p class="panel">This site is written in Jekyll, which uses a combination of Markdown and static HTML files to display content. Start by assuming your page will be Markdown, unless you need to add a significant amount of custom markup for the specific page you’re working on.</p>
+    <h3 id="markup-notes">Markup Notes</h3>
 
-<h3 id="page-setup">1. Page Setup</h3>
+<h4 id="only-use-rows-with-columns">Only use rows with columns</h4>
 
-<p>Every page needs a configuration block:</p>
-
-<h6 id="markdown">Markdown</h6>
-
-<pre><code>---
-layout: page
-title: How To Use This Site
-slug: how-to-use-this-site
-permalink: /how-to-use-this-site/
-status: draft
-revisioncount: 1
-lastedit: 10/20/15
-initial: JHN
----
-</code></pre>
-
-<h4 id="notes">Notes</h4>
-
-<ol>
-  <li><strong>Layout:</strong> the current layouts are “default” and “page”</li>
-  <li><strong>Title:</strong> the page title, used in the head and in the <code>.post-header</code></li>
-  <li><strong>Slug:</strong> slug for the <code>body</code> class.</li>
-  <li><strong>Permalink:</strong> be sure to end it with a slash, or else Jekyll will try to download the file instead of display it.</li>
-  <li><strong>Status:</strong> draft, revision, resolved. Draft for the initial write-up, revision for after we review it, resolved after we agree on it.</li>
-  <li><strong>Revision info:</strong> every time you update a page past the initial draft, update the revision count, last edit date, and initial it.</li>
-</ol>
-
-<p>When creating a new page, keep it grouped with other pages if necessary. Follow the naming convention “groupname-pagename.md;” e.g., the CSS Style Guide is titled “style-guides-css.md,”” so that it’ll be grouped next to other style guide pages when you’re editing the site.</p>
-
-<h3 id="markdown-1">2. Markdown</h3>
-
-<p>You can add classes to small bits of Markdown like this:</p>
-
-<div class="row">
-
-	<div class="medium-6 columns">
-		<h6>Markdown</h6>
-<pre>Here's some content.
-{: .class1 .class2}</pre>
-	</div>
-	<div class="medium-6 columns">
-		<h6>Output</h6>
-		<pre>&lt;p class="class1 class2"&gt;Here's some content.&lt;/p&gt;</pre>
-	</div>
-</div>
+<p>If you nest a <code>.row</code> class within another row, Foundation applies the CSS <code>margin: 0 -0.9375rem;</code> to offset the column padding-left and right applied to a <code>.column</code>. If your horizontal alignments are off, that’s likely why.</p>
 
   </article>
 

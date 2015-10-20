@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>WordPress Tips | CNP Dev Team Docs</title>
+  <meta name="description" content="This site is the location for the Clark/Nikdel/Powell Dev Team documentation and best practices.">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://docs.cnp.io/tips/wordpress/">
+  <link rel="alternate" type="application/rss+xml" title="CNP Dev Team Docs" href="http://docs.cnp.io/feed.xml" />
+</head>
+
+
+  <body class="wordpress-tips">
+
+    <header class="masthead contain-to-grid sticky">
+
+	<nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+		<ul class="title-area">
+			<li class="name">
+				<h2><a href="/">CNP Dev Team Docs</a></h2>
+			</li>
+			<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+			<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+		</ul>
+
+		<section class="top-bar-section">
+
+			<!-- Left Nav Section -->
+			<ul class="left">
+				<li class="has-dropdown">
+					<a href="#">Docs</a>
+					<ul class="dropdown">
+						<li><a href="/docs/client-core">Client Core</a></li>
+						<li><a href="/docs/tzolkin">Tzolkin</a></li>
+						<li><a href="/docs/lepidoptera">Lepidoptera</a></li>
+					</ul>
+				</li>
+				<li class="has-dropdown">
+					<a href="#">Tips</a>
+					<ul class="dropdown">
+						<li><a href="/tips/wordpress">WordPress Tips</a></li>
+						<li><a href="/tips/foundation">Foundation Tips</a></li>
+						<li><a href="/tips/sublime">Sublime Tips</a></li>
+						<li><a href="/tips/javascript">JavaScript Tips</a></li>
+					</ul>
+				</li>
+				<li class="has-dropdown">
+					<a href="#">Style Guides</a>
+					<ul class="dropdown">
+						<li><a href="/style-guides/css">CSS</a></li>
+					</ul>
+				</li>
+				<li class="has-dropdown">
+					<a href="#">Development Guides</a>
+					<ul class="dropdown">
+						<li><a href="/development-guides/website-building-process/">Website Building Process</a></li>
+						<li><a href="/development-guides/making-a-development-plan/">Development Plan</a></li>
+					</ul>
+				</li>
+				<li><a href="/how-to-use-this-site/">How to Use this Site</a></li>
+			</ul>
+
+		</section>
+
+	</nav>
+
+</header>
+
+
+
+
+    <div class="post">
+
+  <header class="post-header">
+    <div class="row">
+        <h1 class="post-title">WordPress Tips</h1>
+        
+    </div>
+  </header>
+
+  
+
+    
+
+        
+
+      
+
+    <div class="page-status alert-box alert">
+      <div class="row">
+        DRAFT, last edited on 10/20/15 by JHN. Revisions: 1
+      </div>
+    </div>
+  
+
+  <article class="post-content row">
+    <h3 id="recommended-plugins">Recommended Plugins</h3>
+
+<blockquote>
+  <p>I’d like to bulk install plugins, so that we don’t have to spend an hour installing plugins for every project. Some
+possibilities are <a href="http://wp-quick-install.com/">WP Quick Install</a>, or the <a href="https://wordpress.org/plugins/multi-plugin-installer/">Multi Plugin Installer</a>, or <a href="https://github.com/bradp/vv#blueprints">
+Variable V’s blueprints</a>. I feel like we’d need these features:</p>
+
+  <ol>
+    <li>Install from a WordPress plugin repo.</li>
+    <li>Install from a Github plugin repo.</li>
+    <li>Install from a local location.</li>
+    <li>Ability to save plugin collections so that it’s a one or two-click process each time.</li>
+  </ol>
+
+  <p>— JHN, 10/20/15</p>
+</blockquote>
+
+<h4 id="admin-setup">Admin Setup</h4>
+
+<ol>
+  <li><strong>Set Standard WP Settings:</strong> Basic Settings (CNP, <a href="https://github.com/Clark-Nikdel-Powell/Basic-Settings">Github</a>)</li>
+  <li><strong id="acp" download="admin-command-palette">Admin Navigation:</strong> Admin Command Palette (CNP, <a href="https://wordpress.org/plugins/admin-command-palette/">WordPress</a>)</li>
+  <li><strong id="page-ordering" download="simple-page-ordering">Page Ordering:</strong> Simple Page Ordering (<a href="https://wordpress.org/plugins/simple-page-ordering/">WordPress</a>)</li>
+  <li><strong>Custom Post Type Menu Links:</strong> WordPress Post Type Archive Links (<a href="https://wordpress.org/plugins/post-type-archive-links/">WordPress</a>)</li>
+  <li><strong>CSS Hotfixes:</strong> Simple Custom CSS (<a href="https://wordpress.org/plugins/simple-custom-css/">WordPress</a>)</li>
+  <li><strong>Syntax Highlighting:</strong> HTML Editor Syntax Highlighter (<a href="https://wordpress.org/plugins/html-editor-syntax-highlighter/">WordPress</a>)</li>
+  <li><strong>Manager User Role:</strong> Mr. Manager (CNP, <a href="https://github.com/Clark-Nikdel-Powell/Mr.-Manager">Github</a>)</li>
+  <li><strong>More Editing Tools:</strong> TinyMCE Advanced (<a href="https://wordpress.org/plugins/tinymce-advanced/">WordPress</a>)</li>
+</ol>
+
+<h4 id="cms-setup">CMS Setup</h4>
+
+<ol>
+  <li><strong>Custom meta boxes:</strong> Advanced Custom Fields Pro (Licensed)</li>
+  <li><strong>Post Relationships:</strong> Posts 2 Posts (<a href="https://wordpress.org/plugins/posts-to-posts/">WordPress</a> / <a href="https://github.com/scribu/wp-posts-to-posts/wiki">Github Docs</a>)</li>
+  <li><strong>Better Admin Column Information:</strong> Admin Columns (<a href="https://wordpress.org/plugins/codepress-admin-columns/">WordPress</a>)</li>
+  <li><strong>Events Plugin:</strong> Tzolkin (CNP, <a href="https://github.com/Clark-Nikdel-Powell/Tzolkin">Github</a>)</li>
+  <li><strong>Social Settings / Twitter API:</strong> Lepidoptera (CNP, <a href="https://github.com/Clark-Nikdel-Powell/Lepidoptera">Github</a>)</li>
+  <li><strong>Email Forms:</strong> Contact Form 7 (<a href="https://wordpress.org/plugins/contact-form-7/">WordPress</a>), Gravity Forms (Licensed)</li>
+</ol>
+
+<h4 id="tools">Tools</h4>
+
+<ol>
+  <li><strong>Site Moves:</strong> WP DB Pro (Licensed), WPSyncDB (<a href="https://github.com/wp-sync-db/wp-sync-db">Github</a>), WPSyncDB Media Files (<a href="https://github.com/wp-sync-db/wp-sync-db-media-files">Github</a>)</li>
+  <li><strong id="force-regenerate-thumbnails" download="force-regenerate-thumbnails">Regenerate Thumbnails:</strong> Force Regenerate Thumbnails (<a href="https://wordpress.org/plugins/force-regenerate-thumbnails/">WordPress</a>)</li>
+  <li><strong id="enable-media-replace" download="enable-media-replace">Replace Media:</strong> Enable Media Replace (<a href="https://wordpress.org/plugins/enable-media-replace/">WordPress</a>)</li>
+  <li><strong>Better Image Thumbnails:</strong> Theia Smart Thumbnails (Lincensed)</li>
+</ol>
+
+<h4 id="utilities">Utilities</h4>
+
+<ol>
+  <li><strong>Caching:</strong> WP-Rocket (Licensed)</li>
+  <li><strong>Site Security / Firewall:</strong> Cloudflare (<a href="https://wordpress.org/plugins/cloudflare/">WordPress</a>) / Sucuri (<a href="https://wordpress.org/plugins/sucuri-scanner/">WordPress</a>)</li>
+  <li><strong>Redirection:</strong> Safe Redirect Manager (<a href="https://wordpress.org/plugins/safe-redirect-manager/">WordPress</a>)</li>
+  <li><strong>Google Analytics:</strong> Google Analytics (<a href="https://wordpress.org/plugins/googleanalytics/">WordPress</a>), Simple Google Analytics (<a href="https://wordpress.org/plugins/simple-google-analytics/">WordPress</a>), or All-in-One SEO Pack (<a href="https://wordpress.org/plugins/all-in-one-seo-pack/">WordPress</a>)</li>
+  <li><strong>SEO:</strong> All-in-One SEO Pack (<a href="https://wordpress.org/plugins/all-in-one-seo-pack/">WordPress</a>)</li>
+  <li><strong>HTTPS:</strong> WordPress HTTPS (<a href="https://wordpress.org/plugins/wordpress-https/">WordPress</a>)</li>
+  <li><strong>Better Mail Sending:</strong> wpMandrill (<a href="https://wordpress.org/plugins/wpmandrill/">WordPress</a>)</li>
+  <li><strong>Keep site de-indexed:</strong> Get Off My Lawn (CNP, <a href="https://github.com/Clark-Nikdel-Powell/Get-Off-My-Lawn">Github</a>)</li>
+</ol>
+
+<h3 id="cms-setup-notes">CMS Setup Notes</h3>
+
+<ol>
+  <li>Keep your custom meta field names scoped, but don’t overscope them.</li>
+  <li>Choose image sizes <strong>VERY</strong> carefully. Any additional image size means there’s another copy of an image on the server.</li>
+</ol>
+
+  </article>
+
+</div>
+
+
+    <footer>
+	<div class="row">
+		&copy; 2015 Clark/Nikdel/Powell
+	</div>
+</footer>
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/foundation/js/foundation.min.js"></script>
+    <script type="text/javascript">$(document).foundation();</script>
+    <script src="/bower_components/foundation/js/foundation/foundation.magellan.js"></script>
+
+  </body>
+
+</html>

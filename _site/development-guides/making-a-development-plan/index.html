@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Making a Development Plan | CNP Dev Team Docs</title>
+  <meta name="description" content="Don't rush in to a project. Plan it out first.">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://docs.cnp.io/development-guides/making-a-development-plan/">
+  <link rel="alternate" type="application/rss+xml" title="CNP Dev Team Docs" href="http://docs.cnp.io/feed.xml" />
+</head>
+
+
+  <body class="development-plan">
+
+    <header class="masthead contain-to-grid sticky">
+
+	<nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+		<ul class="title-area">
+			<li class="name">
+				<h2><a href="/">CNP Dev Team Docs</a></h2>
+			</li>
+			<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+			<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+		</ul>
+
+		<section class="top-bar-section">
+
+			<!-- Left Nav Section -->
+			<ul class="left">
+				<li class="has-dropdown">
+					<a href="#">Docs</a>
+					<ul class="dropdown">
+						<li><a href="/docs/client-core">Client Core</a></li>
+						<li><a href="/docs/tzolkin">Tzolkin</a></li>
+						<li><a href="/docs/lepidoptera">Lepidoptera</a></li>
+					</ul>
+				</li>
+				<li class="has-dropdown">
+					<a href="#">Tips</a>
+					<ul class="dropdown">
+						<li><a href="/tips/wordpress">WordPress Tips</a></li>
+						<li><a href="/tips/foundation">Foundation Tips</a></li>
+						<li><a href="/tips/sublime">Sublime Tips</a></li>
+						<li><a href="/tips/javascript">JavaScript Tips</a></li>
+					</ul>
+				</li>
+				<li class="has-dropdown">
+					<a href="#">Style Guides</a>
+					<ul class="dropdown">
+						<li><a href="/style-guides/css">CSS</a></li>
+					</ul>
+				</li>
+				<li class="has-dropdown">
+					<a href="#">Development Guides</a>
+					<ul class="dropdown">
+						<li><a href="/development-guides/website-building-process/">Website Building Process</a></li>
+						<li><a href="/development-guides/making-a-development-plan/">Development Plan</a></li>
+					</ul>
+				</li>
+				<li><a href="/how-to-use-this-site/">How to Use this Site</a></li>
+			</ul>
+
+		</section>
+
+	</nav>
+
+</header>
+
+
+
+
+    <div class="post">
+
+  <header class="post-header">
+    <div class="row">
+        <h1 class="post-title">Making a Development Plan</h1>
+        
+        <p class="post-excerpt">Don't rush in to a project. Plan it out first.</p>
+        
+    </div>
+  </header>
+
+  
+
+    
+
+        
+
+      
+
+    <div class="page-status alert-box alert">
+      <div class="row">
+        DRAFT, last edited on 10/20/15 by JHN. Revisions: 1
+      </div>
+    </div>
+  
+
+  <article class="post-content row">
+    <p class="panel">A good development plan will help you see holes in the design and your thinking before you start writing code. As you plan out a site, here are some questions to be thinking about:</p>
+
+<h3 id="cms-setup">CMS Setup</h3>
+
+<div class="row">
+
+  <div class="column medium-7">
+    <ol>
+      <li>What are the post types?</li>
+      <li>What are the taxonomies, and what post types do they belong to?
+        <ol>
+          <li>Do we <em>need</em> taxonomies, or would a meta item suffice? (See panel)</li>
+        </ol>
+      </li>
+      <li>What are the custom meta items? What types of fields will they be?</li>
+      <li>Are there any post 2 post connections?</li>
+      <li>What plugins will we need for this website? (See <a href="/tips/wordpress/">WordPress Tips</a> for recommended plugins.)</li>
+    </ol>
+
+    <p>and, generally:</p>
+
+    <ol>
+      <li>How can we handle this site’s data efficiently?</li>
+      <li>How can we make this site’s data easier to manage?</li>
+      <li>What blocks of code are you going to reuse throughout the site? Do they need to be in a plugin, or in the theme?</li>
+      <li>Use the WordPress PHP style guide for both writing <a href="https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/" target="_blank">code</a> and <a href="https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/php/" target="_blank">documentation</a>.</li>
+    </ol>
+  </div>
+
+  <div class="column medium-5">
+    <div class="panel callout">
+      <p>Only use a taxonomy if you need to display an archive page for it. If it’s just for better organization, use a custom meta item.</p>
+    </div>
+  </div>
+
+</div>
+
+<h3 id="markup">Markup</h3>
+
+<p>Markup is usually difficult to plan for. What seems simple when you look at the design can become much more complicated as you start to code it. In general, plan for these ideas:</p>
+
+<ol>
+  <li>Simple is good, Simple is life.</li>
+  <li>Use class names frequently. It’s better to style based on a class than a tag, because the tag may need to change.</li>
+  <li>If you’re working on a complex module, try the <strong>BEM naming convention</strong>:</li>
+</ol>
+
+<h6 id="html">HTML</h6>
+<pre><code class="language-html">&lt;div class="person"&gt;
+    &lt;div class="person-image"&gt;
+        &lt;img src="[...]"&gt;
+    &lt;/div&gt;
+    &lt;div class="person-info"&gt;
+        &lt;h3 class="person-name"&gt;&lt;/h3&gt;
+        &lt;p class="person-title"&gt;&lt;/p&gt;
+        &lt;p class="person-email"&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p class="alert-box info">Notice, I didn’t write “person-info-name,” but rather “person-name,” which keeps it simpler.</p>
+
+<p>This way, we can nest for SCSS organizational purposes without adding more specificity to our CSS selectors:</p>
+
+<div class="row">
+  <div class="column medium-6">
+    <h6 id="scss">SCSS</h6>
+    <pre><code class="language-scss">.person {
+    &amp;-image {}
+    &amp;-info {}
+    &amp;-name {}
+    &amp;-title {}
+    &amp;-email {}
+}
+</code></pre>
+  </div>
+  <div class="column medium-6">
+    <h6 id="css">CSS</h6>
+    <pre><code class="language-scss">.person {}
+.person-image {}
+.person-info {}
+.person-name {}
+.person-title {}
+.person-email {}
+</code></pre>
+  </div>
+</div>
+
+<h3 id="scss-1">SCSS</h3>
+
+<ol>
+  <li>What modules does this site have? How can we reuse styles?</li>
+  <li>Modularize margins and padding as well. Look for how spacing works on the site as a whole, not just a single page.</li>
+  <li>Don’t overnest your CSS. This is paramount to future site maintenance.</li>
+  <li>Get the initial type styles from Typecast.</li>
+  <li>When it comes to type scaling, using <code>rem</code> units at the module level only might work well: <a href="https://css-tricks.com/rems-ems/">CSS Tricks Article</a></li>
+  <li>For more specific tips, follow the <a href="/style-guides/css">CSS Style Guide</a></li>
+</ol>
+
+<h3 id="javascriptux">JavaScript/UX</h3>
+
+<p class="alert-box warning">Do not underestimate JavaScript! Complex user interaction effects take a hell of a lot more testing than CSS effects, and are more prone to unusual behavior.</p>
+
+<ol>
+  <li>In general, follow the WordPress JavaScript style guide for writing <a href="https://make.wordpress.org/core/handbook/best-practices/coding-standards/javascript/" target="_blank">code</a> and <a href="https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/javascript/" target="_blank">documentation</a>.</li>
+</ol>
+
+  </article>
+
+</div>
+
+
+    <footer>
+	<div class="row">
+		&copy; 2015 Clark/Nikdel/Powell
+	</div>
+</footer>
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/foundation/js/foundation.min.js"></script>
+    <script type="text/javascript">$(document).foundation();</script>
+    <script src="/bower_components/foundation/js/foundation/foundation.magellan.js"></script>
+
+  </body>
+
+</html>

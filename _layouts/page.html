@@ -4,10 +4,38 @@ layout: default
 <div class="post">
 
   <header class="post-header">
-  	<div class="row">
-  		<h1 class="post-title">{{ page.title }}</h1>
-  	</div>
+    <div class="row">
+        <h1 class="post-title">{{ page.title }}</h1>
+        {% if page.excerpt %}
+        <p class="post-excerpt">{{ page.excerpt }}</p>
+        {% endif %}
+    </div>
   </header>
+
+  {% if page.status %}
+
+    {% case page.status %}
+
+      {% when 'draft' %}
+
+        {% assign statusclass = 'alert' %}
+
+      {% when 'revised' %}
+
+        {% assign statusclass = 'warning' %}
+
+      {% when 'resolved' %}
+
+        {% assign statusclass = 'success' %}
+
+    {% endcase %}
+
+    <div class="page-status alert-box {{ statusclass }}">
+      <div class="row">
+        {{ page.status | upcase }}, last edited on {{ page.lastedit }} by {{ page.initial }}. Revisions: {{ page.revisioncount }}
+      </div>
+    </div>
+  {% endif %}
 
   <article class="post-content row">
     {{ content }}
