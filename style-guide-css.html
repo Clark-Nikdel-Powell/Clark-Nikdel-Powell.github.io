@@ -30,7 +30,22 @@ initial: JHN
 	<div class="row">
 
 		<div class="example small-4 medium-8 columns">
-			<script src="https://gist.github.com/jhned/c1aa6d53e7510a4b8147.js"></script>
+{% highlight css %}
+display
+width
+height
+margin
+padding
+position
+top
+right
+bottom
+left
+z-index
+float
+clear
+overflow
+{% endhighlight %}
 		</div><!-- example -->
 
 		<div class="small-8 medium-4 columns end">
@@ -47,7 +62,26 @@ initial: JHN
 
 	<div class="example">
 		<h6>At-Rule Placement</h6>
-		<script src="https://gist.github.com/jhned/7e2dfe1c2dbbe3284d88.js"></script>
+{% highlight css %}
+%tcell {
+    display: table-cell;
+    vertical-align: middle;
+}
+@mixin pseudo-triangle {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    border: solid transparent;
+}
+.linkster {
+    @extend %tcell;
+    @include pseudo-triangle;
+    position: static;
+    vertical-align: top;
+}
+{% endhighlight %}
 	</div><!-- example -->
 
 </div><!-- properties -->
@@ -61,7 +95,29 @@ initial: JHN
 
 	<div class="example">
 		<h6>Media Query Formatting</h6>
-		<script src="https://gist.github.com/jhned/0e96b289b2d90e875a82.js"></script>
+		<!-- <script src="https://gist.github.com/jhned/0e96b289b2d90e875a82.js"></script> -->
+{% highlight scss %}
+/*——————————————————————————————————————————————————————————
+/  Details: Tablet & Up
+/—————————————————————————————————————————————————————————*/
+
+@media #{$medium-up} {
+
+    ul {
+    	@include columns(3 3em)
+        padding-left: 0;
+        border-left: 0;
+        list-style-type: square;
+
+        li {
+            padding-left: 1em;
+            text-indent: -1em;
+            list-style-position: inside;
+        }
+    }
+
+}
+{% endhighlight %}
 	</div>
 
     <p>Try to keep media query blocks to the standard breakpoints, and group them under medium-sized parent elements: for example, <code>body.page</code> is probably too broad, whereas <code>.btn.yellow</code> is too narrow. Aim for “just right,” also known as the Goldilocks Principle.</p>
@@ -70,7 +126,13 @@ initial: JHN
 
 	<div class="example">
 		<h6>Foundation Breakpoints</h6>
-		<script src="https://gist.github.com/jhned/840c7b02a907a02a57a3.js"></script>
+		<!-- <script src="https://gist.github.com/jhned/840c7b02a907a02a57a3.js"></script> -->
+{% highlight scss %}
+$small-breakpoint:  em-calc(640)  !default;
+$medium-breakpoint: em-calc(1024) !default;
+$large-breakpoint:  em-calc(1440) !default;
+$xlarge-breakpoint: em-calc(1920) !default;
+{% endhighlight %}
 	</div>
 
 </div>
@@ -84,7 +146,37 @@ initial: JHN
 
 	<div class="example">
 		<h6>Element Nesting</h6>
-    	<script src="https://gist.github.com/jhned/3ec846ef28402cd404e3.js"></script>
+    	<!-- <script src="https://gist.github.com/jhned/3ec846ef28402cd404e3.js"></script> -->
+{% highlight scss %}
+.parent {
+    width: 50%;
+    float: left;
+
+    &:before, &:after {
+        content: "";
+    }
+    &:first-child {
+        color: red;
+    }
+    .child-element {
+        display: none;
+    }
+    &:hover {
+        color: blue;
+
+        .child-element {
+            display: block;
+        }
+    }
+    &.open {
+        height: 100%;
+
+        .child-element {
+            color: red;
+        }
+    }
+}
+{% endhighlight %}
     </div>
 
     <h4>3.1 Elements Order Explained</h4>
@@ -100,7 +192,7 @@ initial: JHN
 
     <h4>Nest only if you need to</h4>
 
-    <p class="alert-box warning">Group child elements together, either nested or unnested.</p>
+    <p class="alert-box alert">REMEMBER: Group child elements together, either nested or unnested.</p>
 
     <p>To determine whether a child element needs to be nested, consider:</p>
 
@@ -112,24 +204,127 @@ initial: JHN
 	<p>If you’re unsure what to do, start off by not nesting the element. If you run into problems with it, then consider whether you need to nest it, or whether you can solve it another way.</p>
 
 	<div class="example">
-		<h6>HTML/SCSS</h6>
-		<script src="https://gist.github.com/jhned/f7d1f895a8107586fafe.js"></script>
-	</div>
+		<!-- <script src="https://gist.github.com/jhned/f7d1f895a8107586fafe.js"></script> -->
+
+		<div class="row">
+
+			<div class="columns medium-6">
+
+				<h6>HTML</h6>
+
+{% highlight html %}
+<div class="parent">
+    <div class="generic-child-element">
+        …
+    </div>
+    <div class="unique-child-element">
+        <h3 class="title">This Block's Title</h3>
+    </div>
+    <div class="another-child-element">
+        Some text…
+    </div>
+</div>
+{% endhighlight %}
+
+			</div><!-- medium-6 html -->
+
+			<div class="columns medium-6">
+
+				<h6>SCSS</h6>
+
+{% highlight scss %}
+.parent {
+    width: 50%;
+    float: left;
+
+    &:before, &:after {
+        content: "";
+    }
+    &:first-child {
+        color: red;
+    }
+    &:hover {
+        color: blue;
+
+        .generic-child-element {
+            display: inline-block;
+        }
+        .unique-child-element {
+            display: block;
+        }
+    }
+    &.open {
+        height: 100%;
+
+        .unique-child-element {
+            color: red;
+        }
+        .another-child-element {
+            color: green;
+        }
+    }
+}
+.parent .generic-child-element {
+    display:none;
+}
+.unique-child-element {
+    display: none;
+    //[lots of CSS lines…]
+}
+.another-child-element {
+    //[lots of CSS lines…]
+}
+{% endhighlight %}
+
+			</div><!-- medium-6 scss -->
+
+		</div><!-- row -->
+
+	</div><!-- example -->
 
 	<p class="alert-box info">The .generic-child-element here is styled outside of the .parent styles. Even though it <em>needs</em> the specificity, it's better to group .generic-child-element with the other child elements.</p>
 
 
-	<h4>CSS nesting doesn't have to match HTML nesting</h4>
+	<h4>BEM Clases / CSS nesting doesn't have to match HTML nesting</h4>
 
-	<p class="alert-box warning">Also remember: CSS nesting <strong>does not have to match</strong> HTML nesting. For example:</p>
+	<p>CSS nesting <strong>does not have to match</strong> HTML nesting. Also, try to use BEM naming conventions when you're styling a module, so that you can keep styles scoped to the module and easy to override at the same time. For example:</p>
 
 	<h6>HTML</h6>
-	<script src="https://gist.github.com/jhned/c102f7e7c8ea42d7e5cc.js"></script>
+	<!-- <script src="https://gist.github.com/jhned/c102f7e7c8ea42d7e5cc.js"></script> -->
+
+{% highlight html %}
+<div class="module">
+    <div class="module-image">
+        <img src="a-cool-cucumber.gif" />
+    </div>
+    <div class="module-text">
+        <h3 class="module-title">This Block's Title</h3>
+    </div>
+</div>
+{% endhighlight %}
 
 	<p>the proper way to nest the CSS in this case would be:</p>
 
 	<h6>SCSS</h6>
-	<script src="https://gist.github.com/jhned/034a471a1bef55c9a80b.js"></script>
+	<!-- <script src="https://gist.github.com/jhned/034a471a1bef55c9a80b.js"></script> -->
+
+{% highlight scss %}
+div.module {
+
+    &-image {
+        margin: .5em;
+    }
+    img {
+        border: none;
+    }
+    &-text {
+        padding: .25em;
+    }
+    &-title {
+        font-size: 1.5em;
+    }
+}
+{% endhighlight %}
 
 
 	<h4>Write in order of the DOM tree</h4>

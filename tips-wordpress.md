@@ -1,7 +1,7 @@
 ---
 layout: page
 title: WordPress Tips
-excerpt: Recommended plugins and WordPress snippets.
+excerpt: Recommended plugins and best practices.
 permalink: /tips/wordpress/
 status: draft
 revisioncount: 1

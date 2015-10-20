@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>How To Use This Site | CNP Dev Team Docs</title>
-  <meta name="description" content="This site is the location for the Clark/Nikdel/Powell Dev Team documentation and best practices.">
+  <meta name="description" content="Best practices and tutorials.">
 
   <link rel="icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="/css/main.css">
@@ -47,7 +47,6 @@
 						<li><a href="/tips/wordpress">WordPress Tips</a></li>
 						<li><a href="/tips/foundation">Foundation Tips</a></li>
 						<li><a href="/tips/sublime">Sublime Tips</a></li>
-						<li><a href="/tips/javascript">JavaScript Tips</a></li>
 					</ul>
 				</li>
 				<li class="has-dropdown">
@@ -57,13 +56,22 @@
 					</ul>
 				</li>
 				<li class="has-dropdown">
-					<a href="#">Development Guides</a>
+					<a href="/tools-and-walkthroughs/">Tools & Walkthroughs</a>
+					<ul class="dropdown">
+						<li><a href="/tools-and-walkthroughs/vagrant-setup/">Vagrant Setup</a></li>
+						<li><a href="/tools-and-walkthroughs/codekit-setup/">Codekit Setup</a></li>
+						<li><a href="/tools-and-walkthroughs/vmware-fusion-setup/">VMware Fusion Setup</a></li>
+						<li><a href="/tools-and-walkthroughs/wp-smpt-mandrill-walkthrough/">WP SMTP / Mandrill</a></li>
+					</ul>
+				</li>
+				<li><a href="/snippets/">Snippets</a></li>
+				<li class="has-dropdown">
+					<a href="#">Planning</a>
 					<ul class="dropdown">
 						<li><a href="/development-guides/website-building-process/">Website Building Process</a></li>
 						<li><a href="/development-guides/making-a-development-plan/">Development Plan</a></li>
 					</ul>
 				</li>
-				<li><a href="/snippets/">Snippets</a></li>
 				<li><a href="/how-to-use-this-site/">How to Use this Site</a></li>
 			</ul>
 
@@ -81,6 +89,8 @@
   <header class="post-header">
     <div class="row">
         <h1 class="post-title">How To Use This Site</h1>
+        
+        <p class="post-excerpt">Best practices and tutorials.</p>
         
     </div>
   </header>
@@ -112,7 +122,6 @@
 <pre><code>---
 layout: page
 title: How To Use This Site
-slug: how-to-use-this-site
 permalink: /how-to-use-this-site/
 status: draft
 revisioncount: 1
@@ -126,7 +135,6 @@ initial: JHN
 <ol>
   <li><strong>Layout:</strong> the current layouts are “default” and “page”</li>
   <li><strong>Title:</strong> the page title, used in the head and in the <code>.post-header</code></li>
-  <li><strong>Slug:</strong> slug for the <code>body</code> class.</li>
   <li><strong>Permalink:</strong> be sure to end it with a slash, or else Jekyll will try to download the file instead of display it.</li>
   <li><strong>Status:</strong> draft, revision, resolved. Draft for the initial write-up, revision for after we review it, resolved after we agree on it.</li>
   <li><strong>Revision info:</strong> every time you update a page past the initial draft, update the revision count, last edit date, and initial it.</li>
@@ -136,20 +144,87 @@ initial: JHN
 
 <h3 id="markdown-1">2. Markdown</h3>
 
-<p>You can add classes to small bits of Markdown like this:</p>
+<h5 id="add-classes-to-markdown">Add Classes to Markdown</h5>
 
 <div class="row">
 
-	<div class="medium-6 columns">
-		<h6>Markdown</h6>
-<pre>Here's some content.
-{: .class1 .class2}</pre>
-	</div>
-	<div class="medium-6 columns">
-		<h6>Output</h6>
-		<pre>&lt;p class="class1 class2"&gt;Here's some content.&lt;/p&gt;</pre>
-	</div>
+<div class="medium-6 columns">
+
+    <h6 id="markdown-2">Markdown</h6>
+    <pre><code>Here's some content.
+{: .class1 .class2}
+</code></pre>
+
+  </div>
+
+<div class="medium-6 columns">
+
+    <h6 id="output">Output</h6>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;class1 class2&quot;</span><span class="nt">&gt;</span>Here&#39;s some content.<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+  </div>
+
 </div>
+
+<h5 id="column-classes-and-code-blocks">Column Classes and Code Blocks</h5>
+
+<p>See the Kramdown syntax on <a href="http://kramdown.gettalong.org/syntax.html#html-blocks" target="_blank">HTML Blocks</a> – HTML tags wrapped around Mardown content should have either a <code>markdown="block"</code> attribute, or a <code>markdown="span"</code> attribute.</p>
+
+<p>Add syntax highlighting via a Pygments highlighting block.</p>
+
+<div class="row">
+
+<div class="medium-6 columns">
+    <h6 id="markup">Markup</h6>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;medium-6 columns&quot;</span> <span class="na">markdown=</span><span class="s">&quot;block&quot;</span><span class="nt">&gt;</span>
+    ##### Left Column
+    ~~~ html
+    Fenced Code Block
+    ~~~
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;medium-6 columns&quot;</span> <span class="na">markdown=</span><span class="s">&quot;block&quot;</span><span class="nt">&gt;</span>
+    ##### Right Column
+    {% highlight html %}
+    <span class="nt">&lt;div&gt;</span>Highlighted Block<span class="nt">&lt;/div&gt;</span>
+    {% endhighlight %}
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+  </div>
+
+<div class="medium-6 columns">
+    <h6 id="output-1">Output</h6>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;medium-6 columns&quot;</span> <span class="na">markdown=</span><span class="s">&quot;block&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h5&gt;</span>Left Column<span class="nt">&lt;/h5&gt;</span>
+    <span class="nt">&lt;pre&gt;&lt;code</span> <span class="na">class=</span><span class="s">&quot;language-html&quot;</span><span class="nt">&gt;</span>
+    Fenced Code Block
+    <span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;medium-6 columns&quot;</span> <span class="na">markdown=</span><span class="s">&quot;block&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h5&gt;</span>Right Column<span class="nt">&lt;/h5&gt;</span>
+    <span class="nt">&lt;pre&gt;&lt;code</span> <span class="na">class=</span><span class="s">&quot;language-html&quot;</span> <span class="na">data-lang=</span><span class="s">&quot;html&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;nt&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;lt;</span>div<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;nt&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;gt;</span><span class="nt">&lt;/span&gt;</span>
+      Highlighted Block
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;nt&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;lt;</span>/div<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;nt&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;gt;</span><span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/code&gt;</span>
+    <span class="nt">&lt;/pre&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+  </div>
+
+</div>
+
+<p class="alert-box alert">Watch your tabs! Tab-indented markup might accidentally be converted to a code block. The easiest way to avoid this is to write code with a highlight tag.</p>
+
+<h5 id="gists-vs-code-blocks">Gists vs Code Blocks</h5>
+
+<p>Code blocks with the Pygments highlighting look better and laod faster than Gists, but Gists are a bit easier to share. Use your best judgement.</p>
 
   </article>
 

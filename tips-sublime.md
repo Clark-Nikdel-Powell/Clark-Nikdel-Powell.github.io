@@ -1,13 +1,10 @@
 ---
 layout: page
-title: Intro
-permalink: /
+title: Sublime Tips
+excerpt: Recommended packages.
+permalink: /tips/sublime/
 status: draft
 revisioncount: 1
 lastedit: 10/20/15
 initial: JHN
 ---
-
-<h2>Core Values</h2>
-
-<h2>Core Focus</h2>

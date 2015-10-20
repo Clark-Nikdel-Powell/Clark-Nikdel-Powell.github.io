@@ -47,7 +47,6 @@
 						<li><a href="/tips/wordpress">WordPress Tips</a></li>
 						<li><a href="/tips/foundation">Foundation Tips</a></li>
 						<li><a href="/tips/sublime">Sublime Tips</a></li>
-						<li><a href="/tips/javascript">JavaScript Tips</a></li>
 					</ul>
 				</li>
 				<li class="has-dropdown">
@@ -57,13 +56,22 @@
 					</ul>
 				</li>
 				<li class="has-dropdown">
-					<a href="#">Development Guides</a>
+					<a href="/tools-and-walkthroughs/">Tools & Walkthroughs</a>
+					<ul class="dropdown">
+						<li><a href="/tools-and-walkthroughs/vagrant-setup/">Vagrant Setup</a></li>
+						<li><a href="/tools-and-walkthroughs/codekit-setup/">Codekit Setup</a></li>
+						<li><a href="/tools-and-walkthroughs/vmware-fusion-setup/">VMware Fusion Setup</a></li>
+						<li><a href="/tools-and-walkthroughs/wp-smpt-mandrill-walkthrough/">WP SMTP / Mandrill</a></li>
+					</ul>
+				</li>
+				<li><a href="/snippets/">Snippets</a></li>
+				<li class="has-dropdown">
+					<a href="#">Planning</a>
 					<ul class="dropdown">
 						<li><a href="/development-guides/website-building-process/">Website Building Process</a></li>
 						<li><a href="/development-guides/making-a-development-plan/">Development Plan</a></li>
 					</ul>
 				</li>
-				<li><a href="/snippets/">Snippets</a></li>
 				<li><a href="/how-to-use-this-site/">How to Use this Site</a></li>
 			</ul>
 
@@ -105,7 +113,7 @@
   <article class="post-content row">
     <h3 id="wordpress-snippets">WordPress Snippets</h3>
 
-<h6 id="remove-default-image-sizes">Remove Default Image Sizes</h6>
+<h5 id="remove-default-image-sizes">Remove Default Image Sizes</h5>
 <script src="https://gist.github.com/jhned/f08a50a46e3ca4e1e7f8.js"></script>
 
 <blockquote>
@@ -115,6 +123,38 @@
 <h3 id="composite-snippets">Composite Snippets</h3>
 
 <h6 id="dateblock-style-1">Dateblock Style 1</h6>
+
+<h3 id="sublime-snippets">Sublime Snippets</h3>
+
+<p>To install Sublime Snippets, create a <code>filename.sublime-snippet</code>, and put it in <code>Packages / User</code> (which you can find by using the “Browse Packages” command in Sublime).</p>
+
+<h5 id="comments">Comments</h5>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/*——————————————————————————————————————————</span>
+<span class="c">/  Small Comment Line</span>
+<span class="c">——————————————————————————————————————————*/</span>
+
+<span class="c">/*——————————————————————————————————————————————————————————</span>
+<span class="c">/  Medium Comment Line</span>
+<span class="c">——————————————————————————————————————————————————————————*/</span>
+
+<span class="c">/*——————————————————————————————————————————————————————————————————————————————</span>
+<span class="c">/  Large Comment Line</span>
+<span class="c">——————————————————————————————————————————————————————————————————————————————*/</span></code></pre></div>
+
+<h6 id="triggers--download">Triggers &amp; Download</h6>
+<ul>
+  <li><code>/1</code> Small Comment Line</li>
+  <li><code>/2</code> Medium Comment Line</li>
+  <li><code>/3</code> Large Comment Line</li>
+  <li><a href="/snippets/sublime/comments.zip">CommentSnippets.zip</a></li>
+</ul>
+
+<p>You can use these comment snippets to break up your SCSS, PHP or JavaScript files. Please use <a href="https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/php/#docblock-formatting">docblock formatting</a> for functions in JavaScript and PHP.</p>
+
+<h4 id="emmet-snippets">Emmet Snippets</h4>
+
+<p>Emmet is a HTML and CSS code-expanding tool. It comes with a lot of handy snippets, but you can also add your own in <code>Preferences / Package Settings / Emmet / Settings — User</code>. Here are some that we use often:</p>
 
   </article>
 
