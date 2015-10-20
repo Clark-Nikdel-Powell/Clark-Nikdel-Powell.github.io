@@ -1,7 +1,7 @@
 ---
 layout: page
 title: WordPress Tips
-slug: wordpress-tips
+excerpt: Recommended plugins and WordPress snippets.
 permalink: /tips/wordpress/
 status: draft
 revisioncount: 1
@@ -64,9 +64,3 @@ initial: JHN
 
 1. Keep your custom meta field names scoped, but don't overscope them.
 1. Choose image sizes **VERY** carefully. Any additional image size means there's another copy of an image on the server.
-
-### WordPress Snippets
-
-###### Remove Default Image Sizes
-<script src="https://gist.github.com/jhned/f08a50a46e3ca4e1e7f8.js"></script>
->Removing the default image sizes is a good idea if all images on the site are going to be the same aspect ratio. We could probably add this as a option to Client-Core. — JHN

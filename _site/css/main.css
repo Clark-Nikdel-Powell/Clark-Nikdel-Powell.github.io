@@ -6936,6 +6936,9 @@ th.hide-for-touch {
 body {
   background-color: #F9F9F9; }
 
+.post {
+  background-color: #FFFFFF; }
+
 .post-content {
   padding: 2em 0; }
 

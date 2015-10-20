@@ -2,7 +2,6 @@
 layout: page
 title: Making a Development Plan
 excerpt: Don't rush in to a project. Plan it out first.
-slug: development-plan
 permalink: /development-guides/making-a-development-plan/
 status: draft
 revisioncount: 1

@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Foundation Tips | CNP Dev Team Docs</title>
-  <meta name="description" content="Markup gotchas to watch out for.">
+  <title>Snippets | CNP Dev Team Docs</title>
+  <meta name="description" content="Reusable chunks of code.">
 
   <link rel="icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://docs.cnp.io/tips/foundation/">
+  <link rel="canonical" href="http://docs.cnp.io/snippets/">
   <link rel="alternate" type="application/rss+xml" title="CNP Dev Team Docs" href="http://docs.cnp.io/feed.xml" />
 </head>
 
 
-  <body class="foundation-tips">
+  <body class="snippets">
 
     <header class="masthead contain-to-grid sticky">
 
@@ -80,9 +80,9 @@
 
   <header class="post-header">
     <div class="row">
-        <h1 class="post-title">Foundation Tips</h1>
+        <h1 class="post-title">Snippets</h1>
         
-        <p class="post-excerpt">Markup gotchas to watch out for.</p>
+        <p class="post-excerpt">Reusable chunks of code.</p>
         
     </div>
   </header>
@@ -103,11 +103,18 @@
   
 
   <article class="post-content row">
-    <h3 id="markup-notes">Markup Notes</h3>
+    <h3 id="wordpress-snippets">WordPress Snippets</h3>
 
-<h4 id="only-use-rows-with-columns">Only use rows with columns</h4>
+<h6 id="remove-default-image-sizes">Remove Default Image Sizes</h6>
+<script src="https://gist.github.com/jhned/f08a50a46e3ca4e1e7f8.js"></script>
 
-<p>If you nest a <code>.row</code> class within another row, Foundation applies the CSS <code>margin: 0 -0.9375rem;</code> to offset the column padding-left and right applied to a <code>.column</code>. If your horizontal alignments are off, that’s likely why.</p>
+<blockquote>
+  <p>Removing the default image sizes is a good idea if all images on the site are going to be the same aspect ratio. We could probably add this as a option to Client-Core. — JHN</p>
+</blockquote>
+
+<h3 id="composite-snippets">Composite Snippets</h3>
+
+<h6 id="dateblock-style-1">Dateblock Style 1</h6>
 
   </article>
 

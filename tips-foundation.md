@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Foundation Tips
-slug: foundation-tips
+excerpt: Markup gotchas to watch out for.
 permalink: /tips/foundation/
 status: draft
 revisioncount: 1

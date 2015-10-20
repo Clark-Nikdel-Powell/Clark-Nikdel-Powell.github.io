@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Website Building Process
-slug: website-building-process
 permalink: /development-guides/website-building-process/
 status: draft
 revisioncount: 1

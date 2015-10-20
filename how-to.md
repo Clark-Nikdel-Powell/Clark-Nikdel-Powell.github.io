@@ -1,7 +1,6 @@
 ---
 layout: page
 title: How To Use This Site
-slug: how-to-use-this-site
 permalink: /how-to-use-this-site/
 status: draft
 revisioncount: 1
