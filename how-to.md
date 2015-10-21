@@ -9,10 +9,46 @@ lastedit: 10/20/15
 initial: JHN
 ---
 
+### 0. Tone Guide
+
+When writing updates for this site, **keep your contributions brief, plain, and to-the-point**.
+
+At some point, somebody will be looking to this site for assistance, and it'll be easier to find help if we keep our writing sparse. A little cheekiness is okay now and then, but **this site should be defined by its helpfulness**, not by its humor.
+
+**Keep your message clear and easy-to-understand**. Too many developers let advanced vocabulary go unexplained. If you need to use an ambiguous term, like "<span data-tooltip aria-haspopup="true" class="has-tip" title="The endpoint is the URL where your service (website) can be accessed by a client application (browser)." markdown="span">endpoint</span>," give a definition for it with a tooltip.
+
+##### Updating the Site
+
+Every time you update the site, please do the following:
+
+1. If you created a new page, set the status to `draft`. Otherwise, change the page status to `revised`.
+1. Wrap your updates in a `.diff` div, so that the team can review it faster.
+1. Update the revision info in the page block.
+1. Update the header.html file if you've added a new page / changed the location of an existing page.
+1. Notify the rest of the team about your update (could set up a notification in Slack for this).
+1. After the team reviews your update and gives it the +1, change the status to `resolved` and remove the `.diff` div.
+
+<div class="diff" markdown="block">
+What a `.diff` div may look like. Be sure to set `markdown="block"` if you're in a Markdown file so that the HTML [doesn't throw off your Markdown](#markdown-1).
+</div>
+
+### 1. Local Setup
+
+To begin, you'll need to install these things:
+
+1. Jekyll: run the command `gem install jekyll` from Terminal
+1. Node.js and npm: [download Node.js](https://nodejs.org/en/) first, and check to [make sure npm is up-to-date](https://docs.npmjs.com/getting-started/installing-node).
+1. Install Bower locally by running the command: `npm install -g bower`.
+
+We install Bower so that we can keep the Foundation framework updated, and Jekyll so that you can preview your edits locally. Next:
+
+1. Download the site repo from [Github](https://github.com/Clark-Nikdel-Powell/Clark-Nikdel-Powell.github.io)
+1. cd into the local repo, and run `jekyll serve` to compile updates locally before committing.
+
+### 2. Page Setup
+
 This site is written in Jekyll, which uses a combination of Markdown and static HTML files to display content. Start by assuming your page will be Markdown, unless you need to add a significant amount of custom markup for the specific page you're working on.
 {: .panel}
-
-### 1. Page Setup
 
 Every page needs a configuration block:
 
@@ -126,3 +162,4 @@ Watch your tabs! Tab-indented markup might accidentally be converted to a code b
 ##### Gists vs Code Blocks
 
 Code blocks with the Pygments highlighting look better and laod faster than Gists, but Gists are a bit easier to share. Use your best judgement.
+

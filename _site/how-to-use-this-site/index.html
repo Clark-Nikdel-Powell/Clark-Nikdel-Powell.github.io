@@ -111,9 +111,51 @@
   
 
   <article class="post-content row">
-    <p class="panel">This site is written in Jekyll, which uses a combination of Markdown and static HTML files to display content. Start by assuming your page will be Markdown, unless you need to add a significant amount of custom markup for the specific page you’re working on.</p>
+    <h3 id="tone-guide">0. Tone Guide</h3>
 
-<h3 id="page-setup">1. Page Setup</h3>
+<p>When writing updates for this site, <strong>keep your contributions brief, plain, and to-the-point</strong>.</p>
+
+<p>At some point, somebody will be looking to this site for assistance, and it’ll be easier to find help if we keep our writing sparse. A little cheekiness is okay now and then, but <strong>this site should be defined by its helpfulness</strong>, not by its humor.</p>
+
+<p><strong>Keep your message clear and easy-to-understand</strong>. Too many developers let advanced vocabulary go unexplained. If you need to use an ambiguous term, like “<span data-tooltip="" aria-haspopup="true" class="has-tip" title="The endpoint is the URL where your service (website) can be accessed by a client application (browser).">endpoint</span>,” give a definition for it with a tooltip.</p>
+
+<h5 id="updating-the-site">Updating the Site</h5>
+
+<p>Every time you update the site, please do the following:</p>
+
+<ol>
+  <li>If you created a new page, set the status to <code>draft</code>. Otherwise, change the page status to <code>revised</code>.</li>
+  <li>Wrap your updates in a <code>.diff</code> div, so that the team can review it faster.</li>
+  <li>Update the revision info in the page block.</li>
+  <li>Update the header.html file if you’ve added a new page / changed the location of an existing page.</li>
+  <li>Notify the rest of the team about your update (could set up a notification in Slack for this).</li>
+  <li>After the team reviews your update and gives it the +1, change the status to <code>resolved</code> and remove the <code>.diff</code> div.</li>
+</ol>
+
+<div class="diff">
+  <p>What a <code>.diff</code> div may look like. Be sure to set <code>markdown="block"</code> if you’re in a Markdown file so that the HTML <a href="#markdown-1">doesn’t throw off your Markdown</a>.</p>
+</div>
+
+<h3 id="local-setup">1. Local Setup</h3>
+
+<p>To begin, you’ll need to install these things:</p>
+
+<ol>
+  <li>Jekyll: run the command <code>gem install jekyll</code> from Terminal</li>
+  <li>Node.js and npm: <a href="https://nodejs.org/en/">download Node.js</a> first, and check to <a href="https://docs.npmjs.com/getting-started/installing-node">make sure npm is up-to-date</a>.</li>
+  <li>Install Bower locally by running the command: <code>npm install -g bower</code>.</li>
+</ol>
+
+<p>We install Bower so that we can keep the Foundation framework updated, and Jekyll so that you can preview your edits locally. Next:</p>
+
+<ol>
+  <li>Download the site repo from <a href="https://github.com/Clark-Nikdel-Powell/Clark-Nikdel-Powell.github.io">Github</a></li>
+  <li>cd into the local repo, and run <code>jekyll serve</code> to compile updates locally before committing.</li>
+</ol>
+
+<h3 id="page-setup">2. Page Setup</h3>
+
+<p class="panel">This site is written in Jekyll, which uses a combination of Markdown and static HTML files to display content. Start by assuming your page will be Markdown, unless you need to add a significant amount of custom markup for the specific page you’re working on.</p>
 
 <p>Every page needs a configuration block:</p>
 
@@ -226,6 +268,7 @@ initial: JHN
 
 <p>Code blocks with the Pygments highlighting look better and laod faster than Gists, but Gists are a bit easier to share. Use your best judgement.</p>
 
+
   </article>
 
 </div>
@@ -238,8 +281,10 @@ initial: JHN
 </footer>
 
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/modernizr/modernizr.js"></script>
     <script src="/bower_components/foundation/js/foundation.min.js"></script>
     <script type="text/javascript">$(document).foundation();</script>
+    <script src="/bower_components/foundation/js/foundation/foundation.tooltip.js"></script>
     <script src="/bower_components/foundation/js/foundation/foundation.magellan.js"></script>
 
   </body>

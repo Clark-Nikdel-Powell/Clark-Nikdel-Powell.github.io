@@ -4100,7 +4100,7 @@ ul.pagination {
     float: none; }
 
 /* Panels */
-.panel {
+.panel, .diff {
   border-style: solid;
   border-width: 1px;
   border-color: #d8d8d8;
@@ -4108,18 +4108,18 @@ ul.pagination {
   padding: 1.25rem;
   background: #f2f2f2;
   color: #333333; }
-  .panel > :first-child {
+  .panel > :first-child, .diff > :first-child {
     margin-top: 0; }
-  .panel > :last-child {
+  .panel > :last-child, .diff > :last-child {
     margin-bottom: 0; }
-  .panel h1, .panel h2, .panel h3, .panel h4, .panel h5, .panel h6, .panel p, .panel li, .panel dl {
+  .panel h1, .diff h1, .panel h2, .diff h2, .panel h3, .diff h3, .panel h4, .diff h4, .panel h5, .diff h5, .panel h6, .diff h6, .panel p, .diff p, .panel li, .diff li, .panel dl, .diff dl {
     color: #333333; }
-  .panel h1, .panel h2, .panel h3, .panel h4, .panel h5, .panel h6 {
+  .panel h1, .diff h1, .panel h2, .diff h2, .panel h3, .diff h3, .panel h4, .diff h4, .panel h5, .diff h5, .panel h6, .diff h6 {
     line-height: 1;
     margin-bottom: 0.625rem; }
-    .panel h1.subheader, .panel h2.subheader, .panel h3.subheader, .panel h4.subheader, .panel h5.subheader, .panel h6.subheader {
+    .panel h1.subheader, .diff h1.subheader, .panel h2.subheader, .diff h2.subheader, .panel h3.subheader, .diff h3.subheader, .panel h4.subheader, .diff h4.subheader, .panel h5.subheader, .diff h5.subheader, .panel h6.subheader, .diff h6.subheader {
       line-height: 1.4; }
-  .panel.callout {
+  .panel.callout, .callout.diff {
     border-style: solid;
     border-width: 1px;
     border-color: #d8d8d8;
@@ -4127,22 +4127,22 @@ ul.pagination {
     padding: 1.25rem;
     background: #ecfaff;
     color: #333333; }
-    .panel.callout > :first-child {
+    .panel.callout > :first-child, .callout.diff > :first-child {
       margin-top: 0; }
-    .panel.callout > :last-child {
+    .panel.callout > :last-child, .callout.diff > :last-child {
       margin-bottom: 0; }
-    .panel.callout h1, .panel.callout h2, .panel.callout h3, .panel.callout h4, .panel.callout h5, .panel.callout h6, .panel.callout p, .panel.callout li, .panel.callout dl {
+    .panel.callout h1, .callout.diff h1, .panel.callout h2, .callout.diff h2, .panel.callout h3, .callout.diff h3, .panel.callout h4, .callout.diff h4, .panel.callout h5, .callout.diff h5, .panel.callout h6, .callout.diff h6, .panel.callout p, .callout.diff p, .panel.callout li, .callout.diff li, .panel.callout dl, .callout.diff dl {
       color: #333333; }
-    .panel.callout h1, .panel.callout h2, .panel.callout h3, .panel.callout h4, .panel.callout h5, .panel.callout h6 {
+    .panel.callout h1, .callout.diff h1, .panel.callout h2, .callout.diff h2, .panel.callout h3, .callout.diff h3, .panel.callout h4, .callout.diff h4, .panel.callout h5, .callout.diff h5, .panel.callout h6, .callout.diff h6 {
       line-height: 1;
       margin-bottom: 0.625rem; }
-      .panel.callout h1.subheader, .panel.callout h2.subheader, .panel.callout h3.subheader, .panel.callout h4.subheader, .panel.callout h5.subheader, .panel.callout h6.subheader {
+      .panel.callout h1.subheader, .callout.diff h1.subheader, .panel.callout h2.subheader, .callout.diff h2.subheader, .panel.callout h3.subheader, .callout.diff h3.subheader, .panel.callout h4.subheader, .callout.diff h4.subheader, .panel.callout h5.subheader, .callout.diff h5.subheader, .panel.callout h6.subheader, .callout.diff h6.subheader {
         line-height: 1.4; }
-    .panel.callout a:not(.button) {
+    .panel.callout a:not(.button), .callout.diff a:not(.button) {
       color: #008CBA; }
-      .panel.callout a:not(.button):hover, .panel.callout a:not(.button):focus {
+      .panel.callout a:not(.button):hover, .callout.diff a:not(.button):hover, .panel.callout a:not(.button):focus, .callout.diff a:not(.button):focus {
         color: #0078a0; }
-  .panel.radius {
+  .panel.radius, .radius.diff {
     border-radius: 3px; }
 
 /* Pricing Tables */
@@ -6941,6 +6941,18 @@ body {
 
 .post-content {
   padding: 2em 0; }
+
+.diff {
+  background-color: #def0f7;
+  border-color: #b5dded; }
+  .diff:before {
+    display: block;
+    margin: -1.25rem -1.25rem 1em;
+    padding: .5em 1.25rem;
+    content: "DIFF";
+    color: #000;
+    font-weight: bold;
+    background-color: #a0d3e8; }
 
 header.masthead {
   z-index: 100; }

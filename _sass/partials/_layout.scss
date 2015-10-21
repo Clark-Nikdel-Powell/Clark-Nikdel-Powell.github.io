@@ -7,3 +7,20 @@ body {
 .post-content {
 	padding: 2em 0;
 }
+.diff {
+	@extend .panel;
+	$base_color: $info-color;
+
+	background-color: lighten($base_color, 15%);
+	border-color: lighten($base_color, 5%);
+
+	&:before {
+		display: block;
+		margin: -1.25rem -1.25rem 1em;
+		padding: .5em 1.25rem;
+		content: "DIFF";
+		color: #000;
+		font-weight: bold;
+		background-color: $base_color;
+	}
+}
