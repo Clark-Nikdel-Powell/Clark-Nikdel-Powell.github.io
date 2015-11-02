@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Intro | CNP Dev Team Docs</title>
+  <title>Modules Style Guide | CNP Dev Team Docs</title>
   <meta name="description" content="This site is the location for the Clark/Nikdel/Powell Dev Team documentation and best practices.">
 
   <link rel="icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://docs.cnp.io/">
+  <link rel="canonical" href="http://docs.cnp.io/style-guides/modules/">
   <link rel="alternate" type="application/rss+xml" title="CNP Dev Team Docs" href="http://docs.cnp.io/feed.xml" />
 </head>
 
 
-  <body class="intro">
+  <body class="modules-style-guide">
 
     <header class="masthead contain-to-grid sticky">
 
@@ -89,7 +89,7 @@
 
   <header class="post-header">
     <div class="row">
-        <h1 class="post-title">Intro</h1>
+        <h1 class="post-title">Modules Style Guide</h1>
         
     </div>
   </header>
@@ -110,79 +110,28 @@
   
 
   <article class="post-content row">
-    <h2 id="core-values">Core Values</h2>
+    <p>Modules are PHP functions that we include in our theme via Bower. A good module should be useful, focused, and (in some circumstances) easy to modify. Here are some guidelines to writing a good module:</p>
 
-<p>List of the CNP dev team core values, each with a brief explanation.</p>
-
-<h2 id="core-focus">Core Focus</h2>
-
-<p>What is our core focus.</p>
-
-<h3 id="site-sections">Site Sections</h3>
-
-<div class="row">
-
-<div class="columns medium-4">
-<div class="panel">
-      <h5 id="docs">Docs</h5>
-      <p>Documentation and how-to-use guides for CNP Plugins, like Client-Core, Tzolkin, and Lepidoptera.</p>
-    </div><!-- panel -->
-</div><!-- medium-4 -->
-
-<div class="columns medium-4">
-<div class="panel">
-      <h5 id="tips">Tips</h5>
-      <p>Advice for how to use and write code for frameworks like WordPress, Zurb Foundation, and Sublime.</p>
-    </div><!-- panel -->
-</div><!-- medium-4 -->
-
-<div class="columns medium-4">
-<div class="panel">
-      <h5 id="style-guides">Style Guides</h5>
-      <p>Style guides for languages like CSS, PHP, and JavaScript.</p>
-    </div><!-- panel -->
-</div><!-- medium-4 -->
-
-</div>
-<!-- row -->
-
-<div class="row">
-
-<div class="columns medium-4">
-<div class="panel">
-      <h5 id="tools--walkthroughs">Tools &amp; Walkthroughs</h5>
-      <p>How to set up tools and specific walkthroughs for Vagrant, Codekit, VMware Fusion, etc.</p>
-    </div><!-- panel -->
-</div><!-- medium-4 -->
-
-<div class="columns medium-4">
-<div class="panel">
-      <h5 id="snippets">Snippets</h5>
-      <p>Reusable code snippets for WordPress, Sublime, etc.</p>
-    </div><!-- panel -->
-</div><!-- medium-4 -->
-
-<div class="columns medium-4">
-<div class="panel">
-      <h5 id="planning">Planning</h5>
-      <p>General guides on how to plan for website building.</p>
-    </div><!-- panel -->
-</div><!-- medium-4 -->
-
-</div>
-<!-- row -->
-
-<div class="row">
-
-<div class="columns medium-4">
-<div class="panel">
-      <h5 id="how-to-use-this-site">How to Use this Site</h5>
-      <p>A quick rundown of how to write for and edit this site.</p>
-    </div><!-- panel -->
-</div><!-- medium-4 -->
-
-</div>
-<!-- row -->
+<ol>
+  <li>
+    <p><strong>Filters, then functions</strong>: if you can do what you need to by using WordPress filters, build your module around that. Adding a new function name runs the risk of fatal errors, whereas filters do not.</p>
+  </li>
+  <li>
+    <p><strong>Consistent Names</strong>: Put it on Github, and follow the <code>WP-Module-$name</code> naming convention.</p>
+  </li>
+  <li>
+    <p><strong>Good docs</strong>: Include a Readme.md that follows the WordPress function documentation format: <strong>Description</strong>, <strong>Usage</strong>, <strong>Parameters</strong> &amp; <strong>Return Values</strong>.</p>
+  </li>
+  <li>
+    <p><strong>Filter if you need to</strong>: Include a filter to modify parts of the output that make sense, and include the filter in your documentation.</p>
+  </li>
+  <li>
+    <p><strong>Install it on the theme</strong>: If it is essential to the Foundation Theme, update the theme’s <code>bower.json</code> file.</p>
+  </li>
+  <li>
+    <p><strong>Keep an eye open</strong>: If you notice unexpected behavior, open an issue on the module’s Github repo.</p>
+  </li>
+</ol>
 
 
   </article>
