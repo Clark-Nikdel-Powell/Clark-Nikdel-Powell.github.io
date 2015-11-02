@@ -4,7 +4,7 @@ title: Modules Style Guide
 permalink: /style-guides/modules/
 status: draft
 revisioncount: 1
-lastedit: 10/20/15
+lastedit: 11/02/15
 initial: JHN
 ---
 
