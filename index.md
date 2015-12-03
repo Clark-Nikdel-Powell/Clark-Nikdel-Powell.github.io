@@ -23,7 +23,7 @@ What is our core focus.
 <div class="columns medium-4">
 <div class="panel" markdown="block">
 ##### Docs
-Documentation and how-to-use guides for CNP Plugins, like Client-Core, Tzolkin, and Lepidoptera.
+Links to the documentation for CNP WordPress themes and plugins.
 </div><!-- panel -->
 </div><!-- medium-4 -->
 
@@ -47,7 +47,7 @@ Style guides for languages like CSS, PHP, and JavaScript.
 
 <div class="columns medium-4">
 <div class="panel" markdown="block">
-##### Tools & Walkthroughs
+##### Tools &amp; Walkthroughs
 How to set up tools and specific walkthroughs for Vagrant, Codekit, VMware Fusion, etc.
 </div><!-- panel -->
 </div><!-- medium-4 -->

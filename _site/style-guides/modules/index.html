@@ -36,9 +36,10 @@
 				<li class="has-dropdown">
 					<a href="#">Docs</a>
 					<ul class="dropdown">
-						<li><a href="/docs/client-core">Client Core</a></li>
-						<li><a href="/docs/tzolkin">Tzolkin</a></li>
-						<li><a href="/docs/lepidoptera">Lepidoptera</a></li>
+						<li><a href="https://github.com/Clark-Nikdel-Powell/Foundation-Theme">Foundation Theme</a></li>
+						<li><a href="https://github.com/Clark-Nikdel-Powell/Client-Core">Client Core</a></li>
+						<li><a href="https://github.com/Clark-Nikdel-Powell/Tzolkin">Tzolkin</a></li>
+						<li><a href="https://github.com/Clark-Nikdel-Powell/Lepidoptera">Lepidoptera</a></li>
 					</ul>
 				</li>
 				<li class="has-dropdown">
@@ -110,7 +111,7 @@
   
 
   <article class="post-content row">
-    <p>Modules are PHP functions that we include in our theme via Bower. A good module should be useful, focused, and (in some circumstances) easy to modify. Here are some guidelines to writing a good module:</p>
+    <p>Modules are PHP functions that we include in our theme via Composer. A good module should be useful, focused, and (in some circumstances) easy to modify. Here are some guidelines to writing a good module:</p>
 
 <ol>
   <li>
@@ -126,13 +127,23 @@
     <p><strong>Filter if you need to</strong>: Include a filter to modify parts of the output that make sense, and include the filter in your documentation.</p>
   </li>
   <li>
-    <p><strong>Install it on the theme</strong>: If it is essential to the Foundation Theme, update the theme’s <code>bower.json</code> file.</p>
+    <p><strong>Install it on the theme</strong>: If it is essential to the Foundation Theme, update the theme’s <code>composer.json</code> file.</p>
   </li>
   <li>
     <p><strong>Keep an eye open</strong>: If you notice unexpected behavior, open an issue on the module’s Github repo.</p>
   </li>
 </ol>
 
+<h3 id="additional-notes">Additional Notes</h3>
+
+<ol>
+  <li>
+    <p><strong>Modules vs. Partials</strong>: A module is something that can be reused throughout the theme, and can be used multiple times on a page if necessary. A partial is a piece of a page that is only used once per page.</p>
+  </li>
+  <li>
+    <p><strong>Local Modules</strong>: Not every module needs to be broken out in to a Github repo. If the module is specific enough, keep it local to the theme that you’re working on by putting it in a modules folder.</p>
+  </li>
+</ol>
 
   </article>
 
